@@ -92,7 +92,7 @@ function SignOut() {
 function ChatRoom() {
   const dummy = useRef();
   const messagesRef = firestore.collection("messages");
-  const query = messagesRef.orderBy("createdAt").limit(9999999);
+  const query = messagesRef.orderBy("createdAt").limit(250);
 
   const [messages] = useCollectionData(query, { idField: "id" });
 
@@ -130,7 +130,11 @@ function ChatRoom() {
           placeholder="whats happening?"
         />
 
-        <button type="submit" disabled={!formValue}>
+        <button
+          type="submit"
+          disabled={!formValue}
+          className="flex items-center justify-center w-full h-full"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

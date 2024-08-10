@@ -70,6 +70,16 @@ form button {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+
+  height: 100%;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
   background-image: url("https://firebasestorage.googleapis.com/v0/b/pixelbit-eight.appspot.com/o/space.gif?alt=media&token=4fc54b66-4004-4313-b583-3f6975c72dce");
 }
 
