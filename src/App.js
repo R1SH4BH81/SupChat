@@ -1,10 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import "./App.css";
-
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
 import "firebase/analytics";
+import "firebase/messaging"; // Import messaging
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useCollectionData } from "react-firebase-hooks/firestore";
@@ -22,8 +22,37 @@ const auth = firebase.auth();
 const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
+const messaging = firebase.messaging();
+
 function App() {
   const [user] = useAuthState(auth);
+
+  // Request permission to show notifications
+  useEffect(() => {
+    messaging
+      .requestPermission()
+      .then(() => {
+        console.log("Notification permission granted.");
+        return messaging.getToken();
+      })
+      .then((token) => {
+        console.log("FCM Token:", token);
+        // Save the FCM token to Firestore or send it to your server
+      })
+      .catch((error) => {
+        console.error("Error getting permission or token:", error);
+      });
+  }, []);
+
+  // Handle incoming messages
+  useEffect(() => {
+    const unsubscribe = messaging.onMessage((payload) => {
+      console.log("Message received. ", payload);
+      // Customize notification display
+      alert(`New message: ${payload.notification.title}`);
+    });
+    return unsubscribe;
+  }, []);
 
   return (
     <div className="App">
