@@ -53,7 +53,9 @@ Start chatting in real-time with other users.
 
 ## Technologies Used
 React: Frontend library for building the user interface.
+
 Firebase: Backend services for authentication and real-time database.
+
 Tailwind CSS: For styling the application.
 
 ## Contributing
