@@ -17,8 +17,8 @@ A simple Superchat application built using React and Firebase. This app allows u
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   https://github.com/R1SH4BH81/SupChat.git
+   cd SupChat
    ```
 2. Install dependencies:
 
