@@ -44,15 +44,7 @@ function App() {
       });
   }, []);
 
-  // Handle incoming messages
-  useEffect(() => {
-    const unsubscribe = messaging.onMessage((payload) => {
-      console.log("Message received. ", payload);
-      // Customize notification display
-      alert(`New message: ${payload.notification.title}`);
-    });
-    return unsubscribe;
-  }, []);
+
 
   return (
     <div className="App">
