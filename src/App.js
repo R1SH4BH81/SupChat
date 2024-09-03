@@ -15,7 +15,7 @@ firebase.initializeApp({
   projectId: "pixelbit-eight",
   storageBucket: "pixelbit-eight.appspot.com",
   messagingSenderId: "754545616793",
-  appId: "1:754545616793:web:f6ce0e73ce3cd683a31508",
+  appId: "1:754545616793:web:f6ce0e73ce3cd683a31508"
 });
 
 const auth = firebase.auth();
