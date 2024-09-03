@@ -27,22 +27,7 @@ const messaging = firebase.messaging();
 function App() {
   const [user] = useAuthState(auth);
 
-  // Request permission to show notifications
-  useEffect(() => {
-    messaging
-      .requestPermission()
-      .then(() => {
-        console.log("Notification permission granted.");
-        return messaging.getToken();
-      })
-      .then((token) => {
-        console.log("FCM Token:", token);
-        // Save the FCM token to Firestore or send it to your server
-      })
-      .catch((error) => {
-        console.error("Error getting permission or token:", error);
-      });
-  }, []);
+ 
 
 
 
